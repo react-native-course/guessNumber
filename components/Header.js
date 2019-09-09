@@ -1,24 +1,25 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
+import Colors from '../constants/Colors';
+import TitleText from "./TitleText";
 
 const styles = StyleSheet.create({
     header: {
         width: '100%',
         height: 90,
         paddingTop: 36,
-        backgroundColor: '#f7287b',
+        backgroundColor: Colors.primary,
         alignItems: 'center',
         justifyContent: 'center',
     },
     headerTitle: {
         color: '#000000',
-        fontSize: 18,
     },
 });
 
 const Header = ({title}) => (
     <View style={styles.header}>
-        <Text style={styles.headerTitle}>{title}</Text>
+        <TitleText style={styles.headerTitle}>{title}</TitleText>
     </View>
 );
 
