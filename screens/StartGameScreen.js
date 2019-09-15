@@ -6,6 +6,7 @@ import Input from "../components/Input";
 import NumberContainer from "../components/NumberContainer";
 import BodyText from "../components/BodyText";
 import TitleText from "../components/TitleText";
+import MainButton from "../components/MainButton";
 
 const styles = StyleSheet.create({
     screen: {
@@ -91,7 +92,7 @@ const StartGameScreen = ({onStart}) => {
             <Card style={styles.summaryContainer}>
                 <BodyText>You selected</BodyText>
                 <NumberContainer>{selectedNumber}</NumberContainer>
-                <Button title="start game" onPress={onStartGame}/>
+                <MainButton onPress={onStartGame}>START GAME</MainButton>
             </Card>
         );
     }

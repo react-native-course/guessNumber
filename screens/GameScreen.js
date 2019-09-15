@@ -1,8 +1,10 @@
 import React, {useState, useRef, useEffect} from 'react';
-import {View, StyleSheet, Button, Alert} from "react-native";
+import {View, StyleSheet, Alert} from "react-native";
+import { Ionicons } from '@expo/vector-icons';
 import NumberContainer from "../components/NumberContainer";
 import Card from "../components/Card";
 import BodyText from "../components/BodyText";
+import MainButton from "../components/MainButton";
 
 const styles = StyleSheet.create({
     screen: {
@@ -14,8 +16,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         marginTop: 20,
-        width: 300,
-        maxWidth: '80%',
+        width: 400,
+        maxWidth: '90%',
     }
 });
 
@@ -37,7 +39,7 @@ const GameScreen = ({userChoice, onGameOver}) => {
         currentHigh = useRef(100);
 
     useEffect(() => {
-        if(currentGuess === userChoice) {
+        if (currentGuess === userChoice) {
             onGameOver(rounds);
         }
     }, [currentGuess, userChoice, onGameOver]);
@@ -77,8 +79,12 @@ const GameScreen = ({userChoice, onGameOver}) => {
                 {currentGuess}
             </NumberContainer>
             <Card style={styles.buttonContainer}>
-                <Button title="lower" onPress={lowerHandler}/>
-                <Button title="greater" onPress={greaterHandler}/>
+                <MainButton onPress={lowerHandler}>
+                    <Ionicons name="md-remove" size={24} color="white" />
+                </MainButton>
+                <MainButton onPress={greaterHandler}>
+                    <Ionicons name="md-add" size={24} color="white" />
+                </MainButton>
             </Card>
         </View>
     );
