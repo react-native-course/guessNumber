@@ -7,6 +7,7 @@ import {
     FlatList,
     Dimensions
 } from 'react-native';
+// import {ScreenOrientation} from 'expo';
 import {Ionicons} from '@expo/vector-icons';
 //components
 import NumberContainer from '../components/NumberContainer';
@@ -90,6 +91,9 @@ const GameScreen = props => {
         currentLow = useRef(1),
         currentHigh = useRef(100),
         {userChoice, onGameOver} = props;
+
+    // ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
+    // ScreenOrientation.addOrientationChangeListener(() => console.log('changed'));
 
     useEffect(() => {
         const updateLayout = () => {
