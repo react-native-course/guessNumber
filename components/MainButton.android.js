@@ -20,10 +20,10 @@ const styles = StyleSheet.create({
     },
 });
 
-const MainButton = ({children, onPress}) => {
+const MainButtonAndroid = ({children, onPress}) => {
     let ButtonComponent = TouchableOpacity;
 
-    if (Platform.OS === 'android' && Platform.Version >= 21) {
+    if (Platform.Version >= 21) {
         ButtonComponent = TouchableNativeFeedback;
     }
     return (
@@ -38,4 +38,4 @@ const MainButton = ({children, onPress}) => {
     );
 };
 
-export default MainButton;
+export default MainButtonAndroid;
